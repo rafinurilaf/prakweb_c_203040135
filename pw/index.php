@@ -3,9 +3,6 @@ require 'function.php';
 
 $buku = query("SELECT * FROM buku");
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +17,7 @@ $buku = query("SELECT * FROM buku");
 
 <body>
   <div class="container">
-    <h1>Daftar Buku</h1>
+    <h1>Daftar Novel</h1>
 
     <a href="tambah.php">Tambah Data Buku</a>
     <br><br>
