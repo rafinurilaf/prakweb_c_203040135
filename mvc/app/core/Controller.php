@@ -1,12 +1,15 @@
-<<<<<<< HEAD
 <?php
 
-class Controller{
+class Controller
+{
+  public function view($view, $data = [])
+  {
+    require_once '../app/views/' . $view . '.php';
+  }
 
-=======
-<?php
-
-class Controller{
-
->>>>>>> 73163e33c674455ba5d63a1b9bdf014b2afd1c9a
+  public function model($model)
+  {
+    require_once '../app/models/' . $model . '.php';
+    return new $model;
+  }
 }
