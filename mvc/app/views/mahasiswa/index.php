@@ -32,13 +32,13 @@
       <ul class="list-group">
         <?php foreach ($data['mhs'] as $mhs) : ?>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <?= $mhs['nama']; ?>
+            <?= $mhs['Nama']; ?>
             <div class="">
-              <a href="<?= BASEURL;  ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary">Detail</a>
+              <a href="<?= BASEURL;  ?>/mahasiswa/detail/<?= $mhs['ID']; ?>" class="badge badge-primary">Detail</a>
 
-              <a href="<?= BASEURL;  ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-primary tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?= $mhs['id']; ?>">Ubah</a>
+              <a href="<?= BASEURL;  ?>/mahasiswa/ubah/<?= $mhs['ID']; ?>" class="badge badge-primary tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?= $mhs['ID']; ?>">Ubah</a>
 
-              <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin?');">Hapus</a>
+              <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['ID']; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda benar ingin menghapus?');">Hapus</a>
             </div>
           </li>
         <?php endforeach; ?>
