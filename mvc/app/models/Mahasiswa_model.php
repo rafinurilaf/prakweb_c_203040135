@@ -18,8 +18,8 @@ class Mahasiswa_model
 
   public function getMahasiswaById($id)
   {
-    $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-    $this->db->bind('id', $id);
+    $this->db->query('SELECT * FROM ' . $this->table . ' WHERE ID=:ID');
+    $this->db->bind('ID', $id);
     return $this->db->single();
   }
 
@@ -42,10 +42,10 @@ class Mahasiswa_model
 
   public function hapusDataMahasiswa($id)
   {
-    $query = "DELETE FROM mahasiswa WHERE id = :id";
+    $query = "DELETE FROM mahasiswa WHERE ID = :ID";
 
     $this->db->query($query);
-    $this->db->bind('id', $id);
+    $this->db->bind('ID', $id);
 
     $this->db->execute();
 
@@ -55,18 +55,18 @@ class Mahasiswa_model
   public function ubahDataMahasiswa($data)
   {
     $query = "UPDATE mahasiswa SET
-                    nama = :nama,
-                    nrp = :nrp,
-                    email = :email,
-                    jurusan = :jurusan
-                  WHERE id = :id";
+                    Nama = :Nama,
+                    NRP = :NRP,
+                    Email = :Email,
+                    Jurusan = :Jurusan
+                  WHERE ID = :ID";
 
     $this->db->query($query);
-    $this->db->bind('nama', $data['nama']);
-    $this->db->bind('nrp', $data['nrp']);
-    $this->db->bind('email', $data['email']);
-    $this->db->bind('jurusan', $data['jurusan']);
-    $this->db->bind('id', $data['id']);
+    $this->db->bind('Nama', $data['Nama']);
+    $this->db->bind('NRP', $data['NRP']);
+    $this->db->bind('Email', $data['Email']);
+    $this->db->bind('Jurusan', $data['Jurusan']);
+    $this->db->bind('ID', $data['ID']);
 
     $this->db->execute();
 
@@ -76,7 +76,7 @@ class Mahasiswa_model
   public function cariDataMahasiswa()
   {
     $keyword = $_POST['keyword'];
-    $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";
+    $query = "SELECT * FROM mahasiswa WHERE Nama LIKE :keyword";
     $this->db->query($query);
     $this->db->bind('keyword', "%$keyword%");
     return $this->db->resultSet();
