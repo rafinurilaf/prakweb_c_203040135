@@ -42,7 +42,7 @@ class Mahasiswa_model
 
   public function hapusDataMahasiswa($id)
   {
-    $query = "DELETE FROM mahasiswa WHERE ID = :ID";
+    $query = "DELETE FROM mahasiswa WHERE ID = :id";
 
     $this->db->query($query);
     $this->db->bind('ID', $id);
@@ -55,11 +55,11 @@ class Mahasiswa_model
   public function ubahDataMahasiswa($data)
   {
     $query = "UPDATE mahasiswa SET
-                    Nama = :Nama,
-                    NRP = :NRP,
-                    Email = :Email,
-                    Jurusan = :Jurusan
-                  WHERE ID = :ID";
+                    Nama = :nama,
+                    NRP = :nrp,
+                    Email = :email,
+                    Jurusan = :jurusan
+                  WHERE ID = :id";
 
     $this->db->query($query);
     $this->db->bind('Nama', $data['Nama']);

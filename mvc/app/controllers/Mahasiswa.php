@@ -34,9 +34,9 @@ class Mahasiswa extends Controller
     }
   }
 
-  public function hapus($ID)
+  public function hapus($id)
   {
-    if ($this->model('Mahasiswa_model')->hapusDataMahasiswa($ID) > 0) {
+    if ($this->model('Mahasiswa_model')->hapusDataMahasiswa($id) > 0) {
       Flasher::setFlash('berhasil', 'dihapus', 'success');
       header('Location: ' . BASEURL . '/mahasiswa');
       exit;
